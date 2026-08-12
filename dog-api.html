@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>柴犬 API 練習</title>
+</head>
+
+<body>
+
+    <h1>🐕 我的柴犬 API</h1>
+    <select id="breed">
+    <option value="shiba">柴犬</option>
+    <option value="poodle">貴賓狗</option>
+    <option value="beagle">米格魯</option>
+</select>
+
+    <button>換一隻狗狗</button>
+    <br><br>
+<img id="dogImage" width="400">
+<script>
+    const button = document.querySelector('button');
+    const dogImage = document.getElementById('dogImage');
+    const breedSelect = document.getElementById('breed');
+
+    button.addEventListener('click', () => {
+        const breed = breedSelect.value;
+
+fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                dogImage.src = data.message;
+            });
+    });
+</script>
+</body>
+
+</html>
