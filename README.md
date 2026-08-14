@@ -26,3 +26,4 @@ User selects a dog breed
 → JavaScript reads `data.message`  
 → The image URL is assigned to `<img>`  
 → The dog image appears on the webpage
+Git practice: Stage → Commit → Push
